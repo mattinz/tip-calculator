@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">Tip Helper</string>
+
+    <string name="input_bill_amount_prompt">Bill Amount:</string>
+    <string name="input_tip_amount_prompt">Tip Amount:</string>
+    <string name="input_five_percent">5 %</string>
+    <string name="input_ten_percent">10 %</string>
+    <string name="input_fifteen_percent">15 %</string>
+    <string name="input_twenty_percent">20 %</string>
+
+    <string name="output_tip_total_label">Tip Total:</string>
+    <string name="output_bill_total_label">Bill Total:</string>
+
+    <string name="error_empty_input">Please enter a bill amount.</string>
 </resources>
