@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -41,6 +42,19 @@ public class TipCalculatorActivity extends AppCompatActivity implements View.OnC
         }
     }
 
+    private void changeTipInputMethod(boolean isCustomTipVisible) {
+        if(isCustomTipVisible) {
+            findViewById(R.id.custom_tip_container).setVisibility(View.VISIBLE);
+            findViewById(R.id.preset_tip_container).setVisibility(View.GONE);
+
+            EditText customTipInput = findViewById(R.id.input_custom_tip_amount);
+            customTipInput.requestFocus();
+        } else {
+            findViewById(R.id.custom_tip_container).setVisibility(View.GONE);
+            findViewById(R.id.preset_tip_container).setVisibility(View.VISIBLE);
+        }
+    }
+
     private void setCurrencyTextView(TextView textView, float amount) {
         NumberFormat format = NumberFormat.getCurrencyInstance();
         textView.setText(format.format(amount));
@@ -64,19 +78,16 @@ public class TipCalculatorActivity extends AppCompatActivity implements View.OnC
 
         button = findViewById(R.id.button_tip_custom_cancel);
         button.setOnClickListener(this);
+
+        button = findViewById(R.id.button_tip_custom_accept);
+        button.setOnClickListener(this);
     }
 
     private void setViewModelObservers(TipCalculatorViewModel viewModel) {
         viewModel.getIsCustomTipEntryShown().observe(this, new Observer<Boolean>() {
             @Override
             public void onChanged(@Nullable Boolean aBoolean) {
-                if(aBoolean) {
-                    findViewById(R.id.custom_tip_container).setVisibility(View.VISIBLE);
-                    findViewById(R.id.preset_tip_container).setVisibility(View.GONE);
-                } else {
-                    findViewById(R.id.custom_tip_container).setVisibility(View.GONE);
-                    findViewById(R.id.preset_tip_container).setVisibility(View.VISIBLE);
-                }
+                changeTipInputMethod(aBoolean);
             }
         });
         viewModel.getBillTotal().observe(this, new Observer<Float>() {
@@ -115,6 +126,13 @@ public class TipCalculatorActivity extends AppCompatActivity implements View.OnC
             case R.id.button_tip_custom:
             case R.id.button_tip_custom_cancel:
                 viewModel.toggleIsCustomTipEntryShown();
+                break;
+            case R.id.button_tip_custom_accept:
+                EditText customTipInput = findViewById(R.id.input_custom_tip_amount);
+                String input = customTipInput.getText().toString();
+                if(!TextUtils.isEmpty(input)) {
+                    calculateTotals(Float.parseFloat(input));
+                }
                 break;
             default:
                 Log.d(TipCalculatorActivity.class.getName(), "Could not locate button.");
