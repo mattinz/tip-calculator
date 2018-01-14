@@ -7,7 +7,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
-import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -25,6 +24,7 @@ public class TipCalculatorActivity extends AppCompatActivity implements View.OnC
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tip_calculator);
         setTipButtonListeners();
+        //setTextWatchers();
 
         viewModel = ViewModelProviders.of(this).get(TipCalculatorViewModel.class);
         setViewModelObservers(viewModel);
@@ -60,8 +60,19 @@ public class TipCalculatorActivity extends AppCompatActivity implements View.OnC
         textView.setText(format.format(amount));
     }
 
+    private void setTextWatchers() {
+        EditText billAmountInput = findViewById(R.id.input_bill_amount);
+        billAmountInput.addTextChangedListener(new AppendTextWatcher(billAmountInput,
+                NumberFormat.getCurrencyInstance().getCurrency().getSymbol(),
+                AppendTextWatcher.BEFORE));
+
+        EditText customTipAmountInput = findViewById(R.id.input_custom_tip_amount);
+        customTipAmountInput.addTextChangedListener(new AppendTextWatcher(customTipAmountInput,
+                getString(R.string.custom_tip_amount_append), AppendTextWatcher.AFTER));
+    }
+
     private void setTipButtonListeners() {
-        Button button = findViewById(R.id.button_tip_five_percent);
+        Button button = findViewById(R.id.button_tip_eighteen_percent);
         button.setOnClickListener(this);
 
         button = findViewById(R.id.button_tip_ten_percent);
@@ -111,14 +122,14 @@ public class TipCalculatorActivity extends AppCompatActivity implements View.OnC
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
-            case R.id.button_tip_five_percent:
-                calculateTotals(5.0f);
-                break;
             case R.id.button_tip_ten_percent:
                 calculateTotals(10.0f);
                 break;
             case R.id.button_tip_fifteen_percent:
                 calculateTotals(15.0f);
+                break;
+            case R.id.button_tip_eighteen_percent:
+                calculateTotals(18.0f);
                 break;
             case R.id.button_tip_twenty_percent:
                 calculateTotals(20.0f);
