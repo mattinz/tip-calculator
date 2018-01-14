@@ -30,6 +30,7 @@
         android:textSize="@dimen/text_size_medium" />
 
     <LinearLayout
+        android:id="@+id/preset_tip_container"
         style="?android:attr/buttonBarStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -79,6 +80,32 @@
             android:layout_weight="1"
             android:background="@drawable/tip_button_right"
             android:text="Cust"
+            android:textSize="@dimen/text_size_extra_small" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/custom_tip_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/editText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimaryLight"
+            android:ems="10"
+            android:hint="@string/input_tip_amount_prompt"
+            android:inputType="numberDecimal"
+            android:textSize="@dimen/text_size_medium" />
+
+        <Button
+            android:id="@+id/button_tip_custom_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/tip_button_right"
+            android:text="X"
             android:textSize="@dimen/text_size_extra_small" />
     </LinearLayout>
 </LinearLayout>

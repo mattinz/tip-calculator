@@ -9,10 +9,10 @@ import android.arch.lifecycle.ViewModel;
  */
 
 public class TipCalculatorViewModel extends ViewModel {
-
     private float billAmount;
     private float tipAmount;
 
+    private MutableLiveData<Boolean> isCustomTipEntryShown;
     private MutableLiveData<Float> tipTotal;
     private MutableLiveData<Float> billTotal;
 
@@ -20,8 +20,21 @@ public class TipCalculatorViewModel extends ViewModel {
         billAmount = 0.0f;
         tipAmount = 0.0f;
 
+        isCustomTipEntryShown = new MutableLiveData<>();
         tipTotal = new MutableLiveData<>();
         billTotal = new MutableLiveData<>();
+
+        isCustomTipEntryShown.setValue(false);
+    }
+
+    public void calculateTotals() {
+        TipCalculator tipCalculator = new TipCalculator(billAmount, tipAmount);
+        tipTotal.setValue(tipCalculator.getTipTotal());
+        billTotal.setValue(tipCalculator.getBillTotal());
+    }
+
+    public LiveData<Boolean> getIsCustomTipEntryShown() {
+        return isCustomTipEntryShown;
     }
 
     public LiveData<Float> getTipTotal() {
@@ -40,9 +53,7 @@ public class TipCalculatorViewModel extends ViewModel {
         this.tipAmount = tipAmount;
     }
 
-    public void calculateTotals() {
-        TipCalculator tipCalculator = new TipCalculator(billAmount, tipAmount);
-        tipTotal.setValue(tipCalculator.getTipTotal());
-        billTotal.setValue(tipCalculator.getBillTotal());
+    public void toggleIsCustomTipEntryShown() {
+        isCustomTipEntryShown.setValue(!isCustomTipEntryShown.getValue());
     }
 }

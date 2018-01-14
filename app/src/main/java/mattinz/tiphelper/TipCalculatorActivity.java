@@ -61,9 +61,24 @@ public class TipCalculatorActivity extends AppCompatActivity implements View.OnC
 
         button = findViewById(R.id.button_tip_custom);
         button.setOnClickListener(this);
+
+        button = findViewById(R.id.button_tip_custom_cancel);
+        button.setOnClickListener(this);
     }
 
     private void setViewModelObservers(TipCalculatorViewModel viewModel) {
+        viewModel.getIsCustomTipEntryShown().observe(this, new Observer<Boolean>() {
+            @Override
+            public void onChanged(@Nullable Boolean aBoolean) {
+                if(aBoolean) {
+                    findViewById(R.id.custom_tip_container).setVisibility(View.VISIBLE);
+                    findViewById(R.id.preset_tip_container).setVisibility(View.GONE);
+                } else {
+                    findViewById(R.id.custom_tip_container).setVisibility(View.GONE);
+                    findViewById(R.id.preset_tip_container).setVisibility(View.VISIBLE);
+                }
+            }
+        });
         viewModel.getBillTotal().observe(this, new Observer<Float>() {
             @Override
             public void onChanged(@Nullable Float aFloat) {
@@ -98,7 +113,8 @@ public class TipCalculatorActivity extends AppCompatActivity implements View.OnC
                 calculateTotals(20.0f);
                 break;
             case R.id.button_tip_custom:
-                //TODO: Implement a custom tip field.
+            case R.id.button_tip_custom_cancel:
+                viewModel.toggleIsCustomTipEntryShown();
                 break;
             default:
                 Log.d(TipCalculatorActivity.class.getName(), "Could not locate button.");
