@@ -8,4 +8,6 @@
     <dimen name="text_size_medium">24sp</dimen>
     <dimen name="text_size_small">18sp</dimen>
     <dimen name="text_size_extra_small">12sp</dimen>
+
+    <dimen name="button_corner_radius">20dp</dimen>
 </resources>
