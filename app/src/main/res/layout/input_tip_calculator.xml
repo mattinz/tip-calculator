@@ -3,28 +3,31 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center_vertical|center_horizontal"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/output_layout_vertical_padding"
+    android:paddingLeft="@dimen/output_layout_horizontal_padding"
+    android:paddingRight="@dimen/output_layout_horizontal_padding"
+    android:paddingTop="@dimen/output_layout_vertical_padding">
 
     <TextView
+        android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/input_bill_amount_prompt"
+        android:text="@string/input_prompt"
         android:textAlignment="center"
-        android:textSize="24sp" />
+        android:textSize="@dimen/text_size_small" />
 
     <EditText
         android:id="@+id/input_bill_amount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/colorPrimaryLight"
         android:ems="10"
-        android:inputType="numberDecimal" />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/input_tip_amount_prompt"
-        android:textAlignment="center"
-        android:textSize="24sp" />
+        android:hint="@string/input_bill_amount_prompt"
+        android:inputType="numberDecimal"
+        android:textSize="@dimen/text_size_medium" />
 
     <LinearLayout
         style="?android:attr/buttonBarStyle"
@@ -39,34 +42,39 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/input_five_percent" />
+            android:text="@string/input_five_percent"
+            android:textSize="@dimen/text_size_extra_small" />
 
         <Button
             android:id="@+id/button_tip_ten_percent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/input_ten_percent" />
+            android:text="@string/input_ten_percent"
+            android:textSize="@dimen/text_size_extra_small" />
 
         <Button
             android:id="@+id/button_tip_fifteen_percent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/input_fifteen_percent" />
+            android:text="@string/input_fifteen_percent"
+            android:textSize="@dimen/text_size_extra_small" />
 
         <Button
             android:id="@+id/button_tip_twenty_percent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/input_twenty_percent" />
+            android:text="@string/input_twenty_percent"
+            android:textSize="@dimen/text_size_extra_small" />
 
         <Button
             android:id="@+id/button_tip_custom"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Cust" />
+            android:text="Cust"
+            android:textSize="@dimen/text_size_extra_small" />
     </LinearLayout>
 </LinearLayout>

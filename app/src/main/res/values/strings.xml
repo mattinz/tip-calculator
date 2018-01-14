@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Tip Helper</string>
 
+    <string name="input_prompt">Enter a bill amount and select a tip percentage below to display the results above.</string>
     <string name="input_bill_amount_prompt">Bill Amount:</string>
     <string name="input_tip_amount_prompt">Tip Amount:</string>
     <string name="input_five_percent">5 %</string>

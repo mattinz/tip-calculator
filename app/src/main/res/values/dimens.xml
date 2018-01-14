@@ -3,4 +3,9 @@
     <dimen name="output_layout_horizontal_padding">32dp</dimen>
     <dimen name="output_layout_vertical_padding">16dp</dimen>
     <dimen name="output_divider_height">2dp</dimen>
+
+    <dimen name="text_size_large">40sp</dimen>
+    <dimen name="text_size_medium">24sp</dimen>
+    <dimen name="text_size_small">18sp</dimen>
+    <dimen name="text_size_extra_small">12sp</dimen>
 </resources>
