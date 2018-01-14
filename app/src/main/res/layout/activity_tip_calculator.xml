@@ -7,14 +7,20 @@
     tools:context="mattinz.tiphelper.TipCalculatorActivity">
 
     <include
-        layout="@layout/input_tip_calculator"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1" />
-
-    <include
         layout="@layout/output_tip_calculator"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1" />
+        android:layout_height="wrap_content"
+        android:layout_weight="0" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/output_divider_height"
+        android:background="@color/colorAccent"/>
+
+    <include
+        layout="@layout/input_tip_calculator"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0" />
+
 </LinearLayout>

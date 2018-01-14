@@ -1,7 +1,6 @@
 package mattinz.tiphelper;
 
 import android.arch.lifecycle.Observer;
-import android.arch.lifecycle.ViewModel;
 import android.arch.lifecycle.ViewModelProviders;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -13,6 +12,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.text.NumberFormat;
 
 public class TipCalculatorActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -40,14 +41,9 @@ public class TipCalculatorActivity extends AppCompatActivity implements View.OnC
         }
     }
 
-    private void setBillTotal(float billTotal) {
-        TextView billTotalTextView = findViewById(R.id.output_bill_total);
-        billTotalTextView.setText(Float.toString(billTotal));
-    }
-
-    private void setTipTotal(float tipTotal) {
-        TextView tipTotalTextView = findViewById(R.id.output_tip_total);
-        tipTotalTextView.setText(Float.toString(tipTotal));
+    private void setCurrencyTextView(TextView textView, float amount) {
+        NumberFormat format = NumberFormat.getCurrencyInstance();
+        textView.setText(format.format(amount));
     }
 
     private void setTipButtonListeners() {
@@ -71,13 +67,13 @@ public class TipCalculatorActivity extends AppCompatActivity implements View.OnC
         viewModel.getBillTotal().observe(this, new Observer<Float>() {
             @Override
             public void onChanged(@Nullable Float aFloat) {
-                setBillTotal(aFloat);
+                setCurrencyTextView((TextView) findViewById(R.id.output_bill_total), aFloat);
             }
         });
         viewModel.getTipTotal().observe(this, new Observer<Float>() {
             @Override
             public void onChanged(@Nullable Float aFloat) {
-                setTipTotal(aFloat);
+                setCurrencyTextView((TextView) findViewById(R.id.output_tip_total), aFloat);
             }
         });
     }
