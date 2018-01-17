@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+    <dimen name="input_row_width">300dp</dimen>
+    <dimen name="input_row_height">48dp</dimen>
+
     <dimen name="output_layout_horizontal_padding">32dp</dimen>
     <dimen name="output_layout_vertical_padding">16dp</dimen>
     <dimen name="output_divider_height">2dp</dimen>
