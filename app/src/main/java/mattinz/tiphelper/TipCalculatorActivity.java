@@ -25,7 +25,6 @@ public class TipCalculatorActivity extends AppCompatActivity implements View.OnC
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tip_calculator);
         setTipButtonListeners();
-        //setTextWatchers();
 
         viewModel = ViewModelProviders.of(this).get(TipCalculatorViewModel.class);
         setViewModelObservers(viewModel);
@@ -59,17 +58,6 @@ public class TipCalculatorActivity extends AppCompatActivity implements View.OnC
     private void setCurrencyTextView(TextView textView, float amount) {
         NumberFormat format = NumberFormat.getCurrencyInstance();
         textView.setText(format.format(amount));
-    }
-
-    private void setTextWatchers() {
-        EditText billAmountInput = findViewById(R.id.input_bill_amount);
-        billAmountInput.addTextChangedListener(new AppendTextWatcher(billAmountInput,
-                NumberFormat.getCurrencyInstance().getCurrency().getSymbol(),
-                AppendTextWatcher.BEFORE));
-
-        EditText customTipAmountInput = findViewById(R.id.input_custom_tip_amount);
-        customTipAmountInput.addTextChangedListener(new AppendTextWatcher(customTipAmountInput,
-                getString(R.string.custom_tip_amount_append), AppendTextWatcher.AFTER));
     }
 
     private void setTipButtonListeners() {
