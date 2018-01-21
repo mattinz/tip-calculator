@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -84,14 +85,14 @@ public class TipCalculatorActivity extends AppCompatActivity implements View.OnC
         button = findViewById(R.id.button_tip_twenty_percent);
         button.setOnClickListener(this);
 
-        button = findViewById(R.id.button_tip_custom);
-        button.setOnClickListener(this);
+        ImageButton imageButton = findViewById(R.id.button_tip_custom);
+        imageButton.setOnClickListener(this);
 
-        button = findViewById(R.id.button_tip_custom_cancel);
-        button.setOnClickListener(this);
+        imageButton = findViewById(R.id.button_tip_custom_cancel);
+        imageButton.setOnClickListener(this);
 
-        button = findViewById(R.id.button_tip_custom_accept);
-        button.setOnClickListener(this);
+        imageButton = findViewById(R.id.button_tip_custom_accept);
+        imageButton.setOnClickListener(this);
     }
 
     private void setViewModelObservers(TipCalculatorViewModel viewModel) {

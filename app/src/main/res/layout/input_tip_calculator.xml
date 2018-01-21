@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center_vertical|center_horizontal"
@@ -42,53 +43,56 @@
 
         <Button
             android:id="@+id/button_tip_ten_percent"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="@drawable/tip_button_left"
             android:text="@string/input_ten_percent"
+            android:textAlignment="center"
             android:textColor="@color/colorText"
             android:textSize="@dimen/text_size_small" />
 
         <Button
             android:id="@+id/button_tip_fifteen_percent"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="@drawable/tip_button"
             android:text="@string/input_fifteen_percent"
+            android:textAlignment="center"
             android:textColor="@color/colorText"
             android:textSize="@dimen/text_size_small" />
 
         <Button
             android:id="@+id/button_tip_eighteen_percent"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="@drawable/tip_button"
             android:text="@string/input_eighteen_percent"
+            android:textAlignment="center"
             android:textColor="@color/colorText"
             android:textSize="@dimen/text_size_small" />
 
         <Button
             android:id="@+id/button_tip_twenty_percent"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="@drawable/tip_button"
             android:text="@string/input_twenty_percent"
+            android:textAlignment="center"
             android:textColor="@color/colorText"
             android:textSize="@dimen/text_size_small" />
 
-        <Button
+        <ImageButton
             android:id="@+id/button_tip_custom"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="@drawable/tip_button_right"
-            android:text="Cust"
-            android:textColor="@color/colorText"
-            android:textSize="@dimen/text_size_small" />
+            app:srcCompat="@drawable/ic_mode_edit_black_18dp"
+            android:tint="@color/colorText"/>
 
     </LinearLayout>
 
@@ -102,7 +106,7 @@
             android:id="@+id/input_custom_tip_amount"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_weight="4"
+            android:layout_weight="3"
             android:background="@drawable/tip_button_left"
             android:ems="10"
             android:hint="@string/input_tip_amount_prompt"
@@ -111,24 +115,22 @@
             android:textColor="@color/colorText"
             android:textSize="@dimen/text_size_medium" />
 
-        <Button
+        <ImageButton
             android:id="@+id/button_tip_custom_accept"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1"
+            android:layout_weight="7"
             android:background="@drawable/tip_button"
-            android:text="Ok"
-            android:textColor="@color/colorText"
-            android:textSize="@dimen/text_size_small" />
+            app:srcCompat="@drawable/ic_check_black_18dp"
+            android:tint="@color/colorText"/>
 
-        <Button
+        <ImageButton
             android:id="@+id/button_tip_custom_cancel"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1"
+            android:layout_weight="7"
             android:background="@drawable/tip_button_right"
-            android:text="X"
-            android:textColor="@color/colorText"
-            android:textSize="@dimen/text_size_small" />
+            app:srcCompat="@drawable/ic_close_black_18dp"
+            android:tint="@color/colorText"/>
     </LinearLayout>
 </LinearLayout>
