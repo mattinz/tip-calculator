@@ -1,26 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     tools:context="mattinz.tiphelper.TipCalculatorActivity">
 
     <include
+        android:id="@+id/output_layout"
         layout="@layout/output_tip_calculator"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="0" />
+        android:layout_alignParentTop="true"/>
 
     <View
+        android:id="@+id/divider"
         android:layout_width="match_parent"
         android:layout_height="@dimen/output_divider_height"
-        android:background="@color/colorAccent"/>
+        android:background="@color/colorAccent"
+        android:layout_below="@id/output_layout"/>
 
     <include
+        android:layout_below="@id/divider"
+        android:id="@+id/input_layout"
         layout="@layout/input_tip_calculator"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0" />
+        android:layout_height="wrap_content" />
 
-</LinearLayout>
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/banner_ad_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        ads:adSize="SMART_BANNER"
+        ads:adUnitId="@string/admob_test_ad_unit_id"/>
+
+</RelativeLayout>

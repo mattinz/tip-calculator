@@ -3,7 +3,7 @@
 
     <string name="input_prompt">Enter a bill amount and select a tip percentage below to display the results above.</string>
     <string name="input_bill_amount_prompt">Bill Amount</string>
-    <string name="input_tip_amount_prompt">Tip Amount</string>
+    <string name="input_tip_amount_prompt">Tip Percent</string>
     <string name="input_ten_percent">10 %</string>
     <string name="input_fifteen_percent">15 %</string>
     <string name="input_eighteen_percent">18 %</string>
@@ -14,6 +14,11 @@
 
     <string name="error_empty_input">Please enter a bill amount.</string>
 
-    <string name="bill_amount_prepend">$</string>
-    <string name="custom_tip_amount_append"> %</string>
+    <string name="cd_custom_tip_button">Custom tip</string>
+    <string name="cd_custom_tip_accept_button">Accept</string>
+    <string name="cd_custom_tip_cancel_button">Cancel</string>
+
+    <string name="admob_prod_app_id">ca-app-pub-9954656525361895~8424221483</string>
+    <string name="admob_prod_ad_unit_id">ca-app-pub-9954656525361895/2376498515</string>
+    <string name="admob_test_ad_unit_id">ca-app-pub-3940256099942544/6300978111</string>
 </resources>

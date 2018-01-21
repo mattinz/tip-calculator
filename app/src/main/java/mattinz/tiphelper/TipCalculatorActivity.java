@@ -14,6 +14,10 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
+
 import java.text.NumberFormat;
 
 public class TipCalculatorActivity extends AppCompatActivity implements View.OnClickListener {
@@ -28,6 +32,8 @@ public class TipCalculatorActivity extends AppCompatActivity implements View.OnC
 
         viewModel = ViewModelProviders.of(this).get(TipCalculatorViewModel.class);
         setViewModelObservers(viewModel);
+
+        initializeAds();
     }
 
     private void calculateTotals(float tipAmount) {
@@ -53,6 +59,13 @@ public class TipCalculatorActivity extends AppCompatActivity implements View.OnC
             findViewById(R.id.custom_tip_container).setVisibility(View.GONE);
             findViewById(R.id.preset_tip_container).setVisibility(View.VISIBLE);
         }
+    }
+
+    private void initializeAds() {
+        MobileAds.initialize(this, getString(R.string.admob_prod_app_id));
+
+        AdView bannerAd = findViewById(R.id.banner_ad_view);
+        bannerAd.loadAd(new AdRequest.Builder().build());
     }
 
     private void setCurrencyTextView(TextView textView, float amount) {
