@@ -15,6 +15,7 @@
         android:layout_height="wrap_content"
         android:text="@string/input_prompt"
         android:textAlignment="center"
+        android:textColor="@color/colorText"
         android:textSize="@dimen/text_size_small" />
 
     <EditText
@@ -28,6 +29,7 @@
         android:hint="@string/input_bill_amount_prompt"
         android:inputType="numberDecimal"
         android:paddingLeft="24dp"
+        android:textColor="@color/colorText"
         android:textSize="@dimen/text_size_medium" />
 
     <LinearLayout
@@ -45,7 +47,8 @@
             android:layout_weight="1"
             android:background="@drawable/tip_button_left"
             android:text="@string/input_ten_percent"
-            android:textSize="@dimen/text_size_extra_small" />
+            android:textColor="@color/colorText"
+            android:textSize="@dimen/text_size_small" />
 
         <Button
             android:id="@+id/button_tip_fifteen_percent"
@@ -54,7 +57,8 @@
             android:layout_weight="1"
             android:background="@drawable/tip_button"
             android:text="@string/input_fifteen_percent"
-            android:textSize="@dimen/text_size_extra_small" />
+            android:textColor="@color/colorText"
+            android:textSize="@dimen/text_size_small" />
 
         <Button
             android:id="@+id/button_tip_eighteen_percent"
@@ -63,7 +67,8 @@
             android:layout_weight="1"
             android:background="@drawable/tip_button"
             android:text="@string/input_eighteen_percent"
-            android:textSize="@dimen/text_size_extra_small" />
+            android:textColor="@color/colorText"
+            android:textSize="@dimen/text_size_small" />
 
         <Button
             android:id="@+id/button_tip_twenty_percent"
@@ -72,7 +77,8 @@
             android:layout_weight="1"
             android:background="@drawable/tip_button"
             android:text="@string/input_twenty_percent"
-            android:textSize="@dimen/text_size_extra_small" />
+            android:textColor="@color/colorText"
+            android:textSize="@dimen/text_size_small" />
 
         <Button
             android:id="@+id/button_tip_custom"
@@ -81,7 +87,8 @@
             android:layout_weight="1"
             android:background="@drawable/tip_button_right"
             android:text="Cust"
-            android:textSize="@dimen/text_size_extra_small" />
+            android:textColor="@color/colorText"
+            android:textSize="@dimen/text_size_small" />
 
     </LinearLayout>
 
@@ -95,12 +102,13 @@
             android:id="@+id/input_custom_tip_amount"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_weight="1"
+            android:layout_weight="4"
             android:background="@drawable/tip_button_left"
             android:ems="10"
             android:hint="@string/input_tip_amount_prompt"
             android:inputType="numberDecimal"
             android:paddingLeft="24dp"
+            android:textColor="@color/colorText"
             android:textSize="@dimen/text_size_medium" />
 
         <Button
@@ -109,7 +117,9 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="@drawable/tip_button"
-            android:text="Ok" />
+            android:text="Ok"
+            android:textColor="@color/colorText"
+            android:textSize="@dimen/text_size_small" />
 
         <Button
             android:id="@+id/button_tip_custom_cancel"
@@ -118,6 +128,7 @@
             android:layout_weight="1"
             android:background="@drawable/tip_button_right"
             android:text="X"
-            android:textSize="@dimen/text_size_extra_small" />
+            android:textColor="@color/colorText"
+            android:textSize="@dimen/text_size_small" />
     </LinearLayout>
 </LinearLayout>
