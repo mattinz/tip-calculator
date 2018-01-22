@@ -21,7 +21,7 @@
 
     <EditText
         android:id="@+id/input_bill_amount"
-        android:layout_width="@dimen/input_row_width"
+        android:layout_width="match_parent"
         android:layout_height="@dimen/input_row_height"
         android:layout_marginBottom="8dp"
         android:layout_marginTop="8dp"
@@ -30,13 +30,14 @@
         android:hint="@string/input_bill_amount_prompt"
         android:inputType="numberDecimal"
         android:paddingLeft="24dp"
+        android:paddingStart="24dp"
         android:textColor="@color/colorText"
-        android:textSize="@dimen/text_size_medium" android:paddingStart="24dp"/>
+        android:textSize="@dimen/text_size_medium" />
 
     <LinearLayout
         android:id="@+id/preset_tip_container"
         style="?android:attr/buttonBarStyle"
-        android:layout_width="@dimen/input_row_width"
+        android:layout_width="match_parent"
         android:layout_height="@dimen/input_row_height"
         android:gravity="center_vertical|center_horizontal"
         android:orientation="horizontal">
@@ -99,7 +100,7 @@
 
     <LinearLayout
         android:id="@+id/custom_tip_container"
-        android:layout_width="@dimen/input_row_width"
+        android:layout_width="match_parent"
         android:layout_height="@dimen/input_row_height"
         android:orientation="horizontal">
 
@@ -113,14 +114,15 @@
             android:hint="@string/input_tip_amount_prompt"
             android:inputType="numberDecimal"
             android:paddingLeft="24dp"
+            android:paddingStart="24dp"
             android:textColor="@color/colorText"
-            android:textSize="@dimen/text_size_medium" android:paddingStart="24dp"/>
+            android:textSize="@dimen/text_size_medium" />
 
         <ImageButton
             android:id="@+id/button_tip_custom_accept"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="7"
+            android:layout_weight="8"
             android:background="@drawable/tip_button"
             android:contentDescription="@string/cd_custom_tip_accept_button"
             android:tint="@color/colorText"
@@ -130,7 +132,7 @@
             android:id="@+id/button_tip_custom_cancel"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="7"
+            android:layout_weight="8"
             android:background="@drawable/tip_button_right"
             android:contentDescription="@string/cd_custom_tip_cancel_button"
             android:tint="@color/colorText"
